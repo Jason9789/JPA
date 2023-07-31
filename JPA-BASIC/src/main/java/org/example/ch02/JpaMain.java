@@ -35,7 +35,6 @@ public class JpaMain {
         String id  = "id1";
         Member member = new Member();
         member.setId(id);
-        member.setId(id);
         member.setUsername("Gilbert");
         member.setAge(2);
 
@@ -44,7 +43,7 @@ public class JpaMain {
         member.setAge(20);
 
         Member findMember = em.find(Member.class, id);
-        System.out.println("findMember : " + findMember.getUsername());
+        System.out.println("findMember : " + findMember.getUsername() + " , age : " + findMember.getAge());
 
         List<Member> memberList = em.createQuery("select m from Member m", Member.class).getResultList();
 
